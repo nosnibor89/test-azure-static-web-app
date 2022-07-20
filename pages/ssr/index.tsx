@@ -27,7 +27,7 @@ const ServerSideRendered: NextPage<ServerSideRenderedProps> = ({programs}) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const response = await fetch('http://localhost:7071/api/entries')
+    const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
 
     const programs = entries.items.map((item: any) => {

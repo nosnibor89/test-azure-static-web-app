@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const response = await fetch('http://localhost:7071/api/entries')
+    const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
     const programs = entries.items.map((item: any) => {
         const program = {
