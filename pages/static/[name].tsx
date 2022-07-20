@@ -18,7 +18,7 @@ const StaticRenderedSingle: NextPage<StaticRenderedProps> = ({program}) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-    const response = await fetch('http://localhost:7071/api/entries')
+    const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
     const program = entries.items.map((item: any) => {
         const program = {
