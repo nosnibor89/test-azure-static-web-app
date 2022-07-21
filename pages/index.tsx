@@ -6,11 +6,11 @@ const Home: NextPage = () => {
         <>
             <p>Hello: Go and see the pages in:</p>
             <Link href="/ssr">
-                <a>Server Side Rendered Content</a>
+                <a style={{color: "blue"}}>Server Side Rendered Content</a>
             </Link>
             <br/>
             <Link href="/static">
-                <a>Static Generated Content</a>
+                <a style={{color: "blue"}}>Static Generated Content</a>
             </Link>
         </>
     )

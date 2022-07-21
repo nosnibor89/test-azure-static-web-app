@@ -1,6 +1,7 @@
 import type {GetServerSideProps, NextPage} from 'next'
 import Image from "next/image";
 import {useState} from "react";
+import Link from "next/link";
 
 interface ServerSideRenderedProps {
     program: any
@@ -24,6 +25,9 @@ const ServerSideRenderedSingle: NextPage<ServerSideRenderedProps> = ({program}) 
 
     return (
         <div style={{width: '50%'}}>
+            <Link href={`/ssr`}>
+                <a style={{color: "blue"}}>Go back</a>
+            </Link><br/>
             <small>this button&apos;s purpose is to show dynamic behavior with NextJS</small><br/>
             <button
                 onClick={() => setShowDescription(!showDescription)}>{showDescription ? 'Hide' : 'Show'} Description

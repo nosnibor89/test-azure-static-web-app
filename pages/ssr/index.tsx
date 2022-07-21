@@ -14,7 +14,7 @@ const ServerSideRendered: NextPage<ServerSideRenderedProps> = ({programs}) => {
                 return (
                     <div key={p.id} style={{width: '50%'}}>
                         <h4><Link href={`/ssr/${encodeURIComponent(p.name)}`}>
-                            {p.name}
+                            <a style={{color: "blue"}}>{p.name}</a>
                         </Link></h4>
                         <p>{p.description}</p>
                         <Image src={`https:${p.image}`} width={50}

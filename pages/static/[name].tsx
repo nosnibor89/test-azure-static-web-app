@@ -1,6 +1,7 @@
 import type {GetStaticPaths, GetStaticProps, NextPage} from 'next'
 import Image from "next/image";
 import {useState} from "react";
+import Link from "next/link";
 
 interface StaticRenderedProps {
     program: any
@@ -23,7 +24,10 @@ const StaticRenderedSingle: NextPage<StaticRenderedProps> = ({program}) => {
     }
 
     return (
-        <div style={{width: '50%'}}>
+        <div style={{width: '50%'}}>        
+            <Link href={`/static`}>
+            <a style={{color: "blue"}}>Go back</a>
+            </Link><br/>
             <small>this button&apos;s purpose is to show dynamic behavior with NextJS</small><br/>
             <button
                 onClick={() => setShowDescription(!showDescription)}>{showDescription ? 'Hide' : 'Show'} Description
