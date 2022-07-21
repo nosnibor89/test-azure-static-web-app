@@ -10,9 +10,9 @@ const StaticRenderedSingle: NextPage<StaticRenderedProps> = ({program}) => {
     return (
         <div style={{width: '50%'}}>
             <h4> {program.name}</h4>
+            <Image src={`https:${program.image}`} width={250}
+                   height={250}/>
             <p>{program.description}</p>
-            <Image src={`https:${program.image}`} width={50}
-                   height={50}/>
         </div>
     )
 }
