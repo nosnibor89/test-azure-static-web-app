@@ -10,7 +10,7 @@ const Home: NextPage = () => {
             {/*</Link>*/}
             <br/>
             <Link href="/static">
-                <a>Static Generated Content</a>
+                <a style={{color: "blue"}}>Static Generated Content</a>
             </Link>
         </>
     )

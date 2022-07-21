@@ -15,7 +15,7 @@ const StaticRendered: NextPage<StaticRenderedProps> = ({programs}) => {
                 return (
                     <div key={p.name} style={{width: '50%'}}>
                         <h4><Link href={`/static/${p.name}`}>
-                            {p.name}
+                            <a style={{color: "blue"}}>{p.name}</a>
                         </Link></h4>
                         <p>{p.description}</p>
                         <Image src={`https:${p.image}`} width={50}
