@@ -2,6 +2,7 @@ import type {GetStaticPaths, GetStaticProps, NextPage} from 'next'
 import Image from "next/image";
 import {useState} from "react";
 import Link from "next/link";
+import '../../styles/test.module.css';
 
 interface StaticRenderedProps {
     program: any
@@ -24,7 +25,7 @@ const StaticRenderedSingle: NextPage<StaticRenderedProps> = ({program}) => {
     }
 
     return (
-        <div style={{width: '50%'}}>        
+        <div className='main'>        
             <Link href={`/static`}>
             <a style={{color: "blue"}}>Go back</a>
             </Link><br/>
@@ -85,7 +86,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
         return program
     })
 
-    const paths = programs.map((p: any) => {
+    //Intentionally filter Grade6 so it can be Incrementally Generated
+    const paths = programs.filter((p: any) => p.name !== 'Grade6').map((p: any) => {
         return {
             params: {
                 name: p.name
@@ -95,7 +97,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
         paths: paths,
-        fallback: false // false or 'blocking'
+        fallback: 'blocking' // false or 'blocking'
     };
 }
 
