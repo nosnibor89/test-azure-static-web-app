@@ -28,6 +28,7 @@ const StaticRendered: NextPage<StaticRenderedProps> = ({programs}) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+    console.log(`[INFO]: fetching programs`)
     const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
 

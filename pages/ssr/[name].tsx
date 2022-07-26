@@ -50,6 +50,7 @@ const ServerSideRenderedSingle: NextPage<ServerSideRenderedProps> = ({program}) 
 }
 
 async function findProgram(name: string) {
+    console.log(`[INFO]: fetching program`)
     const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
     const program = entries.items.map((item: any) => {

@@ -51,6 +51,7 @@ const StaticRenderedSingle: NextPage<StaticRenderedProps> = ({program}) => {
 }
 
 async function findProgram(name: string) {
+    console.log(`[INFO]: fetching program`)
     const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
     const program = entries.items.map((item: any) => {
@@ -74,6 +75,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+    console.log(`[INFO]: generating static paths`)
     const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
     const programs = entries.items.map((item: any) => {
