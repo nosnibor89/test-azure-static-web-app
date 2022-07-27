@@ -66,8 +66,11 @@ async function findProgram(name: string) {
     return program;
 }
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
-
+export const getServerSideProps: GetServerSideProps = async ({params, res}) => {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+    )
     const program = await findProgram(String(params?.name))
     return {
         props: {program}

@@ -26,7 +26,11 @@ const ServerSideRendered: NextPage<ServerSideRenderedProps> = ({programs}) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({res}) => {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+    )
     console.log(`[INFO]: fetching programs`)
     const response = await fetch('https://test-backend-nextjs.azurewebsites.net/api/entries')
     const entries = await response.json()
